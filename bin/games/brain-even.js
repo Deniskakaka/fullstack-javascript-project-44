@@ -1,4 +1,4 @@
-import { test, returnRandomNumber } from "../../src/index.js";
+import { review, returnRandomNumber } from "../../src/index.js";
 
 export const barinEven = (count, name) => {
     if (count === 4) return;
@@ -7,5 +7,5 @@ export const barinEven = (count, name) => {
         return;
     }
     let number = returnRandomNumber();
-    barinEven(test(number, 'Answer "yes" if the number is even, otherwise answer "no".',  count, 'even'), name);
+    barinEven(review(number, 'Answer "yes" if the number is even, otherwise answer "no".',  count, 'even'), name);
 };

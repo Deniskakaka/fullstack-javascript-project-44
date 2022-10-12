@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const test = (extension, startQuestion, count, type) => {
+export const review = (extension, startQuestion, count, type) => {
    count === 0 && console.log(`${startQuestion}`);
    console.log(`Question: ${extension}`);
    const answear = readlineSync.question('Your answear:');
