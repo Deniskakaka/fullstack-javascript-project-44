@@ -4,7 +4,7 @@ export const review = (extension, startQuestion, count, name, right) => {
     count === 0 && console.log(`${startQuestion}`);
     console.log(`Question: ${extension}`);
     const answear = readlineSync.question('Your answear:');
-    count = check(typeof answear === 'string' ? answear : +answear, count, name, right);
+    count = check(!parseInt(answear) ? answear : +answear, count, name, right);
     return count;
 };
 
