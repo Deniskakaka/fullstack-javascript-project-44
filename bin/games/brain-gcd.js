@@ -15,7 +15,7 @@ export const brainGcd = (count, name) => {
     }, {});
     const result =  Math.max.apply(null, Object.keys(countItems).filter((item) => countItems[item] > 1).map(el => +el));
     brainGcd(
-        review(`${number1}, ${number2}`,'Find the greatest common divisor of given numbers.', count, 'gcd', name, result), name
+        review(`${number1}, ${number2}`,'Find the greatest common divisor of given numbers.', count, name, result), name
     );
 };
 

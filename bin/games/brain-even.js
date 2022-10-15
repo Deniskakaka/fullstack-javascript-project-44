@@ -9,7 +9,7 @@ export const barinEven = (count, name) => {
   let number = returnRandomNumber();
   let result = isEven(number) ? 'yes' : 'no';
   barinEven(
-    review( number, 'Answer "yes" if the number is even, otherwise answer "no".', count, "even", name, result), name
+    review( number, 'Answer "yes" if the number is even, otherwise answer "no".', count, name, result), name
   );
 };
 

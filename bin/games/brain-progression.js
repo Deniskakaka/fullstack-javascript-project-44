@@ -26,7 +26,6 @@ export const brainProgression = (count, name) => {
         result,
         "What number is missing in the progression?",
         count,
-        "progress",
         name,
         answear
         ),
