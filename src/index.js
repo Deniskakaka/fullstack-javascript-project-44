@@ -1,25 +1,31 @@
 import readlineSync from 'readline-sync';
 
-export const review = (extension, startQuestion, count, type, name) => {
+export const review = (extension, startQuestion, count, type, name, right) => {
     count === 0 && console.log(`${startQuestion}`);
     console.log(`Question: ${extension}`);
     const answear = readlineSync.question('Your answear:');
-    if (type === 'even') count = checkEven(answear, count, name);
-    if (type === 'calc') count = checkCalc(answear, extension, count, name);
-    if (type === 'gcd') count = checkGcd(answear, extension, count, name);
+    if (type === 'even') count = checkEven(answear, count, name, right);
+    if (type === 'calc') count = checkCalc(answear, extension, count, name, right);
+    if (type === 'gcd') count = checkGcd(answear, extension, count, name, right);
+    if (type === 'progress') count = checkProgress(answear, count, name, right);
     return count;
 };
 
-function isEven(value) {
-    if (value % 2 == 0) return true;
-    else return false;
+export const returnRandomNumber = (min = 1, max = 100) =>
+    Math.floor(Math.random() * (max - min) + min);
+
+const checkProgress = (answear, count, name, right) => {
+    if (+answear === right) {
+        console.log('Correct!');
+        return ++count;
+    } else {
+        console.log(`${answear} is wrong answer ;(. Correct answer was ${right}. Let's try again, ${name}!`,);
+        return 4;
+    }
 }
 
-export const returnRandomNumber = () =>
-    Math.floor(Math.random() * (100 - 1) + 1);
-
-const checkEven = (answear, count, name) => {
-    if ((isEven(answear) && answear === 'yes') || (!isEven(answear) && answear === 'no')) {
+const checkEven = (answear, count, name, right) => {
+    if (answear === right) {
        console.log('Correct!');
        return ++count;
     } else {
@@ -32,39 +38,25 @@ const checkEven = (answear, count, name) => {
     }
 };
 
-const checkCalc = (answear, extension, count, name) => {
-    if (eval(extension) === +answear) {
+const checkCalc = (answear, extension, count, name, right) => {
+    if (right === +answear) {
         console.log('Correct!');
         return ++count;
     } else {
         console.log(
-            `${answear} is wrong answer ;(. Correct answer was ${eval(
-                extension,
-            )}. Let's try again, ${name}!`,
+            `${answear} is wrong answer ;(. Correct answer was ${right}. Let's try again, ${name}!`,
             );
         return 4;
     }
 };
 
-const checkGcd = (answear, extension, count, name) => {
-    let dividers = getDivider(+extension.split(',')[0]).concat(getDivider(+extension.split(',')[1]));
-    const countItems = dividers.reduce((acc, item) => {
-        acc[item] = acc[item] ? acc[item] + 1 : 1;
-        return acc;
-    }, {});
-    const result = Object.keys(countItems).filter((item) => countItems[item] > 1).map(el => +el);
-    if (Math.max.apply(null, result) === +answear) {
+const checkGcd = (answear, extension, count, name, rigth) => {
+    if (rigth === +answear) {
         console.log('Correct!');
         return ++count;
     }
     else {
-        console.log(`${answear} is wrong answer ;(. Correct answer was ${Math.max.apply(null, result) }. Let's try again, ${name}!`);
+        console.log(`${answear} is wrong answer ;(. Correct answer was ${rigth}. Let's try again, ${name}!`);
         return 4;
     }
-}
-
-const getDivider = (number) => {
-    const result = [];
-    for (let i = 1; i <= number; i++) if (number % i === 0) result.push(i);
-    return result;
-}
+};

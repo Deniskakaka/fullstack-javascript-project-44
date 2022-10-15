@@ -8,8 +8,19 @@ export const brainGcd = (count, name) => {
     }
     let number1 = returnRandomNumber();
     let number2 = returnRandomNumber();
+    let dividers = getDivider(number1).concat(getDivider(number2));
+    const countItems = dividers.reduce((acc, item) => {
+        acc[item] = acc[item] ? acc[item] + 1 : 1;
+        return acc;
+    }, {});
+    const result =  Math.max.apply(null, Object.keys(countItems).filter((item) => countItems[item] > 1).map(el => +el));
     brainGcd(
-        review(`${number1}, ${number2}`,'Find the greatest common divisor of given numbers.', count, 'gcd', name), name
+        review(`${number1}, ${number2}`,'Find the greatest common divisor of given numbers.', count, 'gcd', name, result), name
     );
 };
 
+const getDivider = (number) => {
+    const result = [];
+    for (let i = 1; i <= number; i++) if (number % i === 0) result.push(i);
+    return result;
+}

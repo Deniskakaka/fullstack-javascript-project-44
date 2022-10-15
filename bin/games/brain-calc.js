@@ -15,7 +15,8 @@ export const brainCalc = (count, name) => {
       "What is the result of the expression?",
       count,
       "calc",
-      name
+      name,
+      eval( `${random1} ${sing} ${random2}`)
     ),
     name
   );
