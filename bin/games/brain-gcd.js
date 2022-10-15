@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+import readlineSync from 'readline-sync';
 import { returnRandomNumber, review } from "../../src/index.js";
 
 export const brainGcd = (count, name) => {
@@ -24,3 +26,13 @@ const getDivider = (number) => {
     for (let i = 1; i <= number; i++) if (number % i === 0) result.push(i);
     return result;
 };
+
+const action = () => {
+    let count = 0;
+    console.log('Welcome to the Brain Games!');
+    const name = readlineSync.question('May i have your name?: ');
+    console.log(`Hello ${name}!`);
+    brainGcd(count, name);
+};
+
+action();

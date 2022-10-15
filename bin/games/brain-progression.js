@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+import readlineSync from 'readline-sync';
 import { returnRandomNumber, review } from "../../src/index.js";
 
 export const brainProgression = (count, name) => {
@@ -30,5 +32,15 @@ export const brainProgression = (count, name) => {
         answear
         ),
         name
-    )
+    );
 };
+
+const action = () => {
+    let count = 0;
+    console.log('Welcome to the Brain Games!');
+    const name = readlineSync.question('May i have your name?: ');
+    console.log(`Hello ${name}!`);
+    brainProgression(count, name);
+};
+
+action();

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+import readlineSync from 'readline-sync';
 import { review, returnRandomNumber } from "../../src/index.js";
 
 export const barinEven = (count, name) => {
@@ -17,3 +19,13 @@ function isEven(value) {
     if (value % 2 == 0) return true;
     else return false;
 }
+
+const action = () => {
+    let count = 0;
+    console.log('Welcome to the Brain Games!');
+    const name = readlineSync.question('May i have your name?: ');
+    console.log(`Hello ${name}!`);
+    barinEven(count, name);
+};
+
+action();

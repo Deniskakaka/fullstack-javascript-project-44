@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+import readlineSync from 'readline-sync';
 import { returnRandomNumber, review } from "../../src/index.js";
 
 export const brainPrime = (count, name) => {
@@ -26,3 +28,13 @@ function primality(n) {
  }
  return n > 1;
 }
+
+const action = () => {
+    let count = 0;
+    console.log('Welcome to the Brain Games!');
+    const name = readlineSync.question('May i have your name?: ');
+    console.log(`Hello ${name}!`);
+    brainPrime(count, name);
+};
+
+action();
