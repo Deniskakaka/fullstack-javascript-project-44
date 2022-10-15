@@ -16,9 +16,11 @@ export const brainProgression = (count, name) => {
     let result = array.map((el, index) => {
         if (index === randomEnlarger) {
             answear = el;
-            el = '..'
-        } return el;
+            el = '..';
+        } 
+        return el;
     }).slice(0, 10).join(' ');
+
     brainProgression(
         review(
         result,
@@ -30,4 +32,4 @@ export const brainProgression = (count, name) => {
         ),
         name
     )
-}
+};

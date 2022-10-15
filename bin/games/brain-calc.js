@@ -16,7 +16,7 @@ export const brainCalc = (count, name) => {
       count,
       "calc",
       name,
-      eval( `${random1} ${sing} ${random2}`)
+      eval(`${random1} ${sing} ${random2}`)
     ),
     name
   );
