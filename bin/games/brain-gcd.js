@@ -30,7 +30,7 @@ const getDivider = (number) => {
 const action = () => {
     let count = 0;
     console.log('Welcome to the Brain Games!');
-    const name = readlineSync.question('May i have your name?:');
+    const name = readlineSync.question('May I have your name?');
     console.log(`Hello ${name}!`);
     brainGcd(count, name);
 };
