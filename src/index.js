@@ -22,7 +22,7 @@ const checkProgress = (answear, count, name, right) => {
         console.log(`${answear} is wrong answer ;(. Correct answer was ${right}. Let's try again, ${name}!`,);
         return 4;
     }
-}
+};
 
 const checkEven = (answear, count, name, right) => {
     if (answear === right) {
