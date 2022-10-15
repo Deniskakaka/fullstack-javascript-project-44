@@ -33,7 +33,7 @@ const randomSing = () => {
 const action = () => {
     let count = 0;
     console.log('Welcome to the Brain Games!');
-    const name = readlineSync.question('May i have your name?: ');
+    const name = readlineSync.question('May i have your name?:');
     console.log(`Hello ${name}!`);
     brainCalc(count, name);
 };
