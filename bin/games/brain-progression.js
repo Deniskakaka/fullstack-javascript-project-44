@@ -9,7 +9,7 @@ const brainProgression = (count, name) => {
     return;
   }
   const array = [];
-  const randomNumber = returnRandomNumber();
+  const randomNumber = returnRandomNumber(10);
   const randomEnlarger = returnRandomNumber(1, 5);
   let answear = 0;
   for (let i = 0; i <= randomNumber; i += randomEnlarger) {
