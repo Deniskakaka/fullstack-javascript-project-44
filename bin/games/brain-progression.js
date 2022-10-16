@@ -19,6 +19,7 @@ const brainProgression = (count, name) => {
     .map((el, index) => {
       if (index === randomEnlarger) {
         answear = el;
+        /* eslint-disable no-param-reassign */
         el = '..';
       }
       return el;

@@ -3,6 +3,7 @@ import readlineSync from 'readline-sync';
 const check = (answear, count, name, right) => {
   if (answear === right) {
     console.log('Correct!');
+    /* eslint-disable no-param-reassign */
     count += 1;
     /* eslint-disable no-param-reassign */
     return count;
@@ -17,9 +18,8 @@ export const review = (extension, startQuestion, count, name, right) => {
   if (count === 0) console.log(`${startQuestion}`);
   console.log(`Question: ${extension}`);
   const answear = readlineSync.question('Your answear:', 10);
-  return check(!parseInt(answear) ? answear : +answear, count, name, right);
+  return check(!parseInt(answear, 10) ? answear : +answear, count, name, right);
 };
 
-export const returnRandomNumber = (min = 1, max = 100) => {
-  return Math.floor(Math.random() * (max - min) + min);
-};
+export const returnRandomNumber = (min = 1, max = 100) => 
+  Math.floor(Math.random() * (max - min) + min);
