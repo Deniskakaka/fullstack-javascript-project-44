@@ -19,11 +19,11 @@ const brainCalc = (count, name) => {
   const sing = randomSing();
   brainCalc(
     review(
-        `${random1} ${sing} ${random2}`,
-        'What is the result of the expression?',
-        count,
-        name,
-        eval(`${random1} ${sing} ${random2}`),
+      `${random1} ${sing} ${random2}`,
+      'What is the result of the expression?',
+      count,
+      name,
+      eval(`${random1} ${sing} ${random2}`),
     ),
     name,
   );

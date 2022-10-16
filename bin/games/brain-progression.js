@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 import { returnRandomNumber, review } from '../../src/index.js';
 
-export const brainProgression = (count, name) => {
+const brainProgression = (count, name) => {
   if (count === 4) return;
   if (count === 3) {
     console.log(`Congratulations, ${name}!`);
@@ -17,22 +17,22 @@ export const brainProgression = (count, name) => {
   }
   const result = array
     .map((el, index) => {
-        if (index === randomEnlarger) {
-          answear = el;
-          el = '..';
-        }
-          return el;
-        })
-        .slice(0, 10)
-        .join(' ');
+      if (index === randomEnlarger) {
+        answear = el;
+        el = '..';
+      }
+        return el;
+      })
+      .slice(0, 10)
+      .join(' ');
 
   brainProgression(
     review(
-        result,
-        'What number is missing in the progression?',
-        count,
-        name,
-        answear,
+      result,
+      'What number is missing in the progression?',
+      count,
+      name,
+      answear,
     ),
     name,
   );

@@ -4,7 +4,7 @@ import { returnRandomNumber, review } from '../../src/index.js';
 
 const getDivider = (number) => {
   const result = [];
-  for (let i = 1; i <= number; i++) if (number % i === 0) result.push(i);
+  for (let i = 1; i <= number; i += 1) if (number % i === 0) result.push(i);
   return result;
 };
 
@@ -29,11 +29,11 @@ const brainGcd = (count, name) => {
     );
   brainGcd(
     review(
-        `${number1} ${number2}`,
-        'Find the greatest common divisor of given numbers.',
-        count,
-        name,
-        result,
+      `${number1} ${number2}`,
+      'Find the greatest common divisor of given numbers.',
+      count,
+      name,
+      result,
     ),
     name,
   );

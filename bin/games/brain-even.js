@@ -17,11 +17,11 @@ const barinEven = (count, name) => {
   const result = isEven(number) ? 'yes' : 'no';
   barinEven(
     review(
-        number,
-        'Answer "yes" if the number is even, otherwise answer "no".',
-        count,
-        name,
-        result,
+      number,
+      'Answer "yes" if the number is even, otherwise answer "no".',
+      count,
+      name,
+      result,
     ),
     name,
   );
