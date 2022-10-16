@@ -23,6 +23,7 @@ const brainCalc = (count, name) => {
       'What is the result of the expression?',
       count,
       name,
+      /* eslint-disable no-eval */
       eval(`${random1} ${sing} ${random2}`),
     ),
     name,
