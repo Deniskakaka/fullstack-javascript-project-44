@@ -19,12 +19,12 @@ const brainProgression = (count, name) => {
     .map((el, index) => {
       if (index === randomEnlarger) {
         answear = el;
-        el = '..';
+        return '..';
       }
-        return el;
-      })
-      .slice(0, 10)
-      .join(' ');
+      return el;
+    })
+    .slice(0, 10)
+    .join(' ');
 
   brainProgression(
     review(

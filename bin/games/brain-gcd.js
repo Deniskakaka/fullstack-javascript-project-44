@@ -11,7 +11,7 @@ const getDivider = (number) => {
 const brainGcd = (count, name) => {
   if (count === 4) return;
   if (count === 3) {
-  console.log(`Congratulations, ${name}!`);
+    console.log(`Congratulations, ${name}!`);
     return;
   }
   const number1 = returnRandomNumber();
@@ -24,9 +24,9 @@ const brainGcd = (count, name) => {
   const result = Math.max.apply(
     null,
     Object.keys(countItems)
-        .filter((item) => countItems[item] > 1)
-        .map((el) => +el),
-    );
+      .filter((item) => countItems[item] > 1)
+      .map((el) => +el),
+  );
   brainGcd(
     review(
       `${number1} ${number2}`,
