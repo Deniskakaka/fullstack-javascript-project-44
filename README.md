@@ -6,8 +6,8 @@
 
 clone repo, in terminal write one of the teams:
 
-1) braine-even;
-2) brain-calc;
-3) brain-prime;
-4) brain-gcd;
-5) brain-progression;
+1) braine-even
+2) brain-calc
+3) brain-prime
+4) brain-gcd
+5) brain-progression
