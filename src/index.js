@@ -21,5 +21,6 @@ export const review = (extension, startQuestion, count, name, right) => {
   return check(!parseInt(answear, 10) ? answear : +answear, count, name, right);
 };
 
-export const returnRandomNumber = (min = 1, max = 100) => 
-  Math.floor(Math.random() * (max - min) + min);
+export function returnRandomNumber (min = 1, max = 100) {
+  return  Math.floor(Math.random() * (max - min) + min);
+};
