@@ -12,13 +12,13 @@ export const returnRandomNumber = (min = 1, max = 100) =>
     Math.floor(Math.random() * (max - min) + min);
 
 const check = (answear, count, name, right) => {
-     if (answear === right) {
-       console.log('Correct!');
-       return ++count;
+    if (answear === right) {
+        console.log('Correct!');
+        return (count += 1);
     } else {
         console.log(
             `${answear} is wrong answer ;(. Correct answer was ${right}. Let's try again, ${name}!`,
         );
-       return 4;
+        return 4;
     }
 };
